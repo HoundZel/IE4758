@@ -1,6 +1,7 @@
 const questionContainer = document.getElementById('question');
 const optionsContainer = document.getElementById('options-container');
 const nextButton = document.getElementById('next-btn');
+const progressContainer = document.getElementById('progress');
 
 const questionBank = [
     { question: "What is information security?", options: ["Information security is the collection of technologies, standards, policies and management practices that are applied to information to keep it secure.","It is just using technology to keep digital information secure","It is just the best policy to keep digital information secure","None of the above"], correct: "Information security is the collection of technologies, standards, policies and management practices that are applied to information to keep it secure." },
@@ -147,6 +148,9 @@ function loadQuestion() {
         optionButton.addEventListener('click', selectOption);
         optionsContainer.appendChild(optionButton);
     });
+
+    // Display progress
+    progressContainer.textContent = `Question ${currentQuestionIndex + 1} of ${shuffledQuestions.length}`;
 }
 
 function selectOption(e) {
@@ -187,20 +191,19 @@ function resetOptions() {
 }
 
 nextButton.addEventListener('click', () => {
-    // Move to the next question, if at the end, loop back
+    // Move to the next question
     currentQuestionIndex++;
-    if (currentQuestionIndex >= shuffledQuestions.length) {
-        // Shuffle questions again to keep it random in the next loop
-        shuffledQuestions = shuffleArray([...questionBank]);
-        currentQuestionIndex = 0; // Reset index to loop
+    if (currentQuestionIndex < shuffledQuestions.length) {
+        loadQuestion();
+    } else {
+        showResults();
     }
-    loadQuestion();
 });
 
 function showResults() {
     questionContainer.innerText = `Quiz Completed! Your Score: ${score}/${shuffledQuestions.length}`;
-    optionsContainer.innerHTML = '';
-    nextButton.style.display = "none";
+    optionsContainer.innerHTML = '';  // Clear options
+    nextButton.style.display = "none";  // Hide the next button
 }
 
 // Initialize quiz by loading the first question
