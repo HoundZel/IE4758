@@ -14,17 +14,46 @@
         <div id="question-container">
             <h3 id="question">Question will appear here</h3>
             <div id="options-container">
-                <button class="option">Option 1</button>
-                <button class="option">Option 2</button>
-                <button class="option">Option 3</button>
-                <button class="option">Option 4</button>
-                <button class="option">Option 5</button>
+                <button class="option" id="option1">Option 1</button>
+                <button class="option" id="option2">Option 2</button>
+                <button class="option" id="option3">Option 3</button>
+                <button class="option" id="option4">Option 4</button>
+                <button class="option" id="option5">Option 5</button>
             </div>
         </div>
         <button id="next-btn">Next Question</button>
         <p id="progress"></p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial question and options
+            document.getElementById('question').innerText = "Which Quiz are you practising for?";
+            document.getElementById('option1').innerText = "Quiz 1";
+            document.getElementById('option2').innerText = "Quiz 2";
+
+            // Hide other options and the next button
+            document.getElementById('option3').style.display = 'none';
+            document.getElementById('option4').style.display = 'none';
+            document.getElementById('option5').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+
+            // Add event listeners to options
+            document.getElementById('option1').addEventListener('click', function() {
+                loadScript('script.js');
+            });
+
+            document.getElementById('option2').addEventListener('click', function() {
+                loadScript('script2.js');
+            });
+        });
+
+        function loadScript(scriptName) {
+            var script = document.createElement('script');
+            script.src = scriptName;
+            document.body.appendChild(script);
+        }
+    </script>
 </body>
 </html>
