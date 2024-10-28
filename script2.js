@@ -104,7 +104,7 @@ const questionBank = [
     { question: "The most common form of securing an online payment system in use is : ________.", options: ["SSL/TLS","SET"], correct: "SSL/TLS" },
     { question: "A ________ is similar to a credit card; however it contains an embedded microprocessor and uses electronic cash which transfers from the consumers’ card to the sellers’ device.", options: ["Contactless smart card","Identity document"], correct: "Contactless smart card" },
     { question: "There are companies that enable financial transactions to transpire over the internet, such as ________.", options: ["PayPal","Skype"], correct: "PayPal" },
-    { question: "Digital cash is legal tender that is instantly convertible into other forms of value without the intermediation of any third parties. a. True It is not true as today digital ca", options: ["FALSE","TRUE"], correct: "FALSE" },
+    { question: "Digital cash is legal tender that is instantly convertible into other forms of value without the intermediation of any third parties.", options: ["FALSE","TRUE"], correct: "FALSE" },
     { question: "Bitcoins are an example of:", options: ["Digital cash","Physical currency"], correct: "Digital cash" },
     { question: "The main reason e-wallets have not replaced the physical wallets is lack of one common international standard", options: ["TRUE","FALSE"], correct: "TRUE" },
     { question: "Cybercrime is basically criminal activity done by using computers and the internet", options: ["TRUE","FALSE"], correct: "TRUE" },
