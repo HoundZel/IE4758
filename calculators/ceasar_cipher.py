@@ -11,6 +11,6 @@ for i in range(97,122,1):
 ciphered = ""
 for j in original:
     code = (convert_to[j]+key)%26
-    ciphered += convert_fro[code]
+    ciphered += convert_fro[code].upper()
 
 print("The ciphered code is: " + ciphered)
