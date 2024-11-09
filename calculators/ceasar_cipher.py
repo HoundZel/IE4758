@@ -6,6 +6,7 @@ convert_fro = {}
 
 for i in range(97,123,1):
     convert_to[chr(i)] = i-97
+    convert_to[chr(i-32)] = i-97
     convert_fro[i-97] = chr(i)
 
 # print(convert_to)
