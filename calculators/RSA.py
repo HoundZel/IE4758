@@ -59,7 +59,7 @@ print(" ")
 
 # print("The public key is : " + str(public_key))
 
-e = int(input("choose your prime public key: "))
+e = int(input("choose your prime public key(e): "))
 
 # calculate private key
 k = 1
@@ -70,4 +70,18 @@ while k:
         break
     k += 1
 print("The Selected K is : " + str(k))
-print("The private key is : " + str(private_key))
+print("The private key(d) is : " + str(private_key))
+
+M = int(input("Enter the message to be encrypted: "))
+
+encrypt = (M ** e) % n
+print("The encrypted message is : " + str(encrypt))
+
+decrypt = (encrypt ** private_key) % n
+print("The decrypted message is : " + str(decrypt))
+
+digital_signature = (M ** private_key) % n
+print("The digital signature is : " + str(digital_signature))
+
+verify = (digital_signature ** e) % n
+print("The Signature Verification is : " + str(verify))
