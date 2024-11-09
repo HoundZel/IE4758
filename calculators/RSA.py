@@ -72,6 +72,7 @@ while k:
 print("The Selected K is : " + str(k))
 print("The private key(d) is : " + str(private_key))
 
+print(" ")
 M = int(input("Enter the message to be encrypted: "))
 
 encrypt = (M ** e) % n
