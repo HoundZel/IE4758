@@ -1,5 +1,6 @@
 original = str(input("Enter a code to be ciphered: "))
 key = int(input("Enter the key: "))
+rotate = int(input("Enter 0 to encrypt and 1 to decrypt: "))
 
 convert_to = {}
 convert_fro = {}
@@ -14,7 +15,10 @@ for i in range(97,123,1):
 
 ciphered = ""
 for j in original:
-    code = (convert_to[j]+key)%26
+    if rotate == 0:
+        code = (convert_to[j]+key)%26
+    else:
+        code = (convert_to[j]-key)%26
     # print(code)
     ciphered += convert_fro[code].upper()
 
